@@ -16,25 +16,17 @@
     <section class="request-form">
       <h2>Submit New Request</h2>
       <form id="equipmentRequestForm">
-        <label for="employeeName">Employee Name:</label>
         <input type="text" id="employeeName" placeholder="Your Name" required />
-
-        <label for="department">Department:</label>
-        <input type="text" id="department" placeholder="e.g. Engineering" required />
-
-        <label for="equipment">Select Equipment:</label>
+        <input type="text" id="department" placeholder="Department" required />
         <select id="equipment" required>
-          <option value="">-- Choose an item --</option>
+          <option value="">Select Equipment</option>
           <option value="Laptop">Laptop</option>
           <option value="Monitor">Monitor</option>
-          <option value="Office Chair">Office Chair</option>
+          <option value="Chair">Office Chair</option>
           <option value="Keyboard & Mouse">Keyboard & Mouse</option>
           <option value="Headphones">Headphones</option>
         </select>
-
-        <label for="reason">Reason / Additional Info:</label>
-        <textarea id="reason" rows="4" placeholder="Why do you need this?"></textarea>
-
+        <textarea id="reason" rows="3" placeholder="Why do you need this?"></textarea>
         <button type="submit">Submit Request</button>
       </form>
     </section>
@@ -45,34 +37,23 @@
       <table id="requestTable">
         <thead>
           <tr>
-            <th>Employee</th>
-            <th>Department</th>
-            <th>Equipment</th>
+            <th>Name</th>
+            <th>Dept</th>
+            <th>Item</th>
             <th>Reason</th>
             <th>Status</th>
             <th>Action</th>
           </tr>
         </thead>
         <tbody>
-          <!-- Sample entry -->
-          <tr>
-            <td>Pooja Bhavani</td>
-            <td>DevOps</td>
-            <td>Office Chair</td>
-            <td>Need ergonomic support for remote work</td>
-            <td><span class="status pending">Pending</span></td>
-            <td>
-              <button class="approve">Approve</button>
-              <button class="reject">Reject</button>
-            </td>
-          </tr>
+          <!-- Filled dynamically -->
         </tbody>
       </table>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 StyleHub Equipment System</p>
+    <p>&copy; 2025 StyleHub</p>
   </footer>
 
   <script src="script.js"></script>
