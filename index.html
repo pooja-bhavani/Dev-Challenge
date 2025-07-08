@@ -1,63 +1,81 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Remote Equipment Request System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>📦 Remote Equipment Request System</h1>
+  </header>
 
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <main class="container">
+    <!-- Employee Request Form -->
+    <section class="request-form">
+      <h2>Submit New Request</h2>
+      <form id="equipmentRequestForm">
+        <label for="employeeName">Employee Name:</label>
+        <input type="text" id="employeeName" placeholder="Your Name" required />
 
-    <div class="login-container">
-        <div class="login-left">
-            <div class="login-header">
-                <h1>Project Board</h1>
-                <p>Dashbord</p>
-            </div>
-            <div class="login-image">
-            </div>
-        </div>
-        <div class="login-right">
-            <div class="login-form-container">
-                <h2>Welcome Back</h2>
-                <p class="login-subtitle">Please login to your account</p>
+        <label for="department">Department:</label>
+        <input type="text" id="department" placeholder="e.g. Engineering" required />
 
-                <form class="login-form" id="loginForm">
-                    <div class="form-group">
-                        <label for="username">Username</label>
-                        <div class="input-with-icon">
-                            <i class="fas fa-user"></i>
-                            <input type="text" id="username" name="username" placeholder="Enter your username" required>
-                        </div>
-                    </div>
+        <label for="equipment">Select Equipment:</label>
+        <select id="equipment" required>
+          <option value="">-- Choose an item --</option>
+          <option value="Laptop">Laptop</option>
+          <option value="Monitor">Monitor</option>
+          <option value="Office Chair">Office Chair</option>
+          <option value="Keyboard & Mouse">Keyboard & Mouse</option>
+          <option value="Headphones">Headphones</option>
+        </select>
 
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <div class="input-with-icon">
-                            <i class="fas fa-lock"></i>
-                            <input type="password" id="password" name="password" placeholder="Enter your password" required>
-                            <i class="fas fa-eye toggle-password" id="togglePassword"></i>
-                        </div>
-                    </div>
+        <label for="reason">Reason / Additional Info:</label>
+        <textarea id="reason" rows="4" placeholder="Why do you need this?"></textarea>
 
-                    <div class="form-options">
-                        <div class="remember-me">
-                            <input type="checkbox" id="remember" name="remember">
-                            <label for="remember">Remember me</label>
-                        </div>
-                        <a href="#" class="forgot-password">Forgot Password?</a>
-                    </div>
+        <button type="submit">Submit Request</button>
+      </form>
+    </section>
 
-                    <button type="submit" class="login-button">Login</button>
+    <!-- Admin Dashboard -->
+    <section class="admin-dashboard">
+      <h2>Admin Dashboard – Pending Requests</h2>
+      <table id="requestTable">
+        <thead>
+          <tr>
+            <th>Employee</th>
+            <th>Department</th>
+            <th>Equipment</th>
+            <th>Reason</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Sample entry -->
+          <tr>
+            <td>Pooja Bhavani</td>
+            <td>DevOps</td>
+            <td>Office Chair</td>
+            <td>Need ergonomic support for remote work</td>
+            <td><span class="status pending">Pending</span></td>
+            <td>
+              <button class="approve">Approve</button>
+              <button class="reject">Reject</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
 
-                    <div class="social-login">
-                        <p>Or login with</p>
-                        <div class="social-icons">
-                            <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="social-icon google"><i class="fab fa-google"></i></a>
-                            <a href="#" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
-                        </div>
-                    </div>
-                </form>
+  <footer>
+    <p>&copy; 2025 StyleHub Equipment System</p>
+  </footer>
 
-                <div class="register-link">
-                    <p>Don't have an account? <a href="#">Register Now</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
+  <script src="script.js"></script>
+</body>
+</html>
+
